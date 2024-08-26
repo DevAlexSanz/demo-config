@@ -1,0 +1,3 @@
+# Ignore AceternityUI components and Config
+src/components/AceternityUI 
+src/lib/AceternityUI

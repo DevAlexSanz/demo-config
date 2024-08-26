@@ -6,19 +6,25 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prepare": "husky install",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --check src",
     "format:fix": "prettier --write src",
     "type-check": "tsc --noEmit",
     "validate": "bun run lint && bun run format && bun run type-check",
-    "fix": "bun run lint:fix && bun run format:fix"
+    "fix": "bun run lint:fix && bun run format:fix",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.30",
+    "lucide-react": "^0.436.0",
     "next": "14.2.6",
     "react": "18",
     "react-dom": "18",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "4.7.4"
   },
   "devDependencies": {
@@ -40,6 +46,12 @@
     "postcss": "8",
     "prettier": "3.3.3",
     "tailwindcss": "3.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "bun lint-staged",
+      "pre-push": "bun run fix && bun run validate"
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
