@@ -48,11 +48,13 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "bun run lint:fix",
-      "bun run format:fix"
+      "bun run fix"
     ],
     "src/**/*.{json,css}": [
       "bun run format:fix"
+    ],
+    "src": [
+      "bun run validate"
     ]
   }
 }
