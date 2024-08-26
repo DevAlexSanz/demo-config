@@ -49,7 +49,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "bun run lint-staged",
+      "pre-commit": "bunx lint-staged",
       "pre-push": "bun run fix && bun run validate"
     }
   },
