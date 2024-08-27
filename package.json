@@ -12,7 +12,8 @@
     "format:fix": "prettier --write src",
     "type-check": "tsc --noEmit",
     "validate": "bun run lint && bun run format && bun run type-check",
-    "fix": "bun run lint:fix && bun run format:fix"
+    "fix": "bun run lint:fix && bun run format:fix",
+    "lint:commit": "commitlint --from=HEAD~1 --to=HEAD"
   },
   "dependencies": {
     "class-variance-authority": "0.7.0",
@@ -27,6 +28,8 @@
     "typescript": "4.7.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
     "@types/node": "20",
     "@types/react": "18",
     "@types/react-dom": "18",
